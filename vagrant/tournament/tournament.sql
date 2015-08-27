@@ -7,3 +7,12 @@
 -- these lines here.
 
 
+create table players (
+	id serial primary key,
+	name text
+);
+
+create table matches (
+	winner integer references players (id),
+	loser integer references players (id)
+);
